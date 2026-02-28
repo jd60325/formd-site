@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMD.ai — Irish Company Formation for €149</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --warm-white: #fff9f4;
+    --ink: #1c1917;
+    --bark: #3d2c1e;
+    --terra: #c45c2e;
+    --terra-light: #f5ede6;
+    --sage: #4a7c59;
+    --sage-light: #e8f0eb;
+    --sand: #e8ddd0;
+    --muted: #8a7968;
+    --border: rgba(60,40,20,0.1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream); color: var(--ink);
+    overflow-x: hidden; line-height: 1.6;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 56px;
+    background: rgba(250,247,242,0.92); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); transition: box-shadow 0.3s;
+  }
+  .logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.5rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+  .logo .dot { color: var(--terra); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-btn { background: var(--terra); color: white; padding: 10px 24px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 12px rgba(196,92,46,0.25); }
+  .nav-btn:hover { background: var(--bark); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 140px 56px 100px;
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px; align-items: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -120px; right: -100px;
+    width: 650px; height: 650px;
+    background: radial-gradient(ellipse, rgba(196,92,46,0.07) 0%, transparent 65%);
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+    animation: morph 14s ease-in-out infinite; pointer-events: none;
+  }
+  @keyframes morph { 0%,100%{border-radius:60% 40% 70% 30%/40% 50% 60% 50%}50%{border-radius:30% 70% 40% 60%/60% 40% 50% 50%} }
+
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--terra-light); border: 1px solid rgba(196,92,46,0.2); padding: 6px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; color: var(--terra); margin-bottom: 24px; animation: fadeUp 0.8s ease both; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(2.8rem, 4.5vw, 4.4rem); line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 20px; animation: fadeUp 0.8s 0.08s ease both; }
+  .hero h1 em { font-style: italic; color: var(--terra); }
+  .price-pill { display: inline-flex; align-items: baseline; gap: 3px; background: var(--ink); color: white; padding: 3px 14px 3px 10px; border-radius: 100px; font-family: 'Fraunces', serif; font-style: normal; vertical-align: middle; margin-left: 4px; }
+  .price-pill .big { font-size: 1.5rem; font-weight: 700; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 460px; margin-bottom: 12px; font-weight: 300; animation: fadeUp 0.8s 0.15s ease both; }
+  .cro-note { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--muted); background: white; border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px; margin-bottom: 36px; animation: fadeUp 0.8s 0.2s ease both; }
+  .cro-note span { color: var(--terra); font-weight: 600; }
+  .hero-actions { display: flex; gap: 14px; align-items: center; animation: fadeUp 0.8s 0.25s ease both; }
+  .btn-terra { background: var(--terra); color: white; padding: 14px 32px; border-radius: 100px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(196,92,46,0.3); }
+  .btn-terra:hover { background: var(--bark); transform: translateY(-2px); }
+  .btn-ghost { color: var(--ink); font-size: 0.95rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1.5px solid var(--sand); padding-bottom: 2px; transition: border-color 0.2s; }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .hero-trust { display: flex; align-items: center; gap: 14px; margin-top: 36px; font-size: 0.82rem; color: var(--muted); animation: fadeUp 0.8s 0.3s ease both; }
+  .avatars { display: flex; }
+  .avatars span { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--cream); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: white; margin-left: -7px; }
+  .avatars span:first-child { margin-left: 0; }
+
+  /* HERO CARD */
+  .hero-card-wrap { position: relative; padding: 18px 20px; animation: fadeUp 0.8s 0.12s ease both; }
+  .hero-card { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 20px 60px rgba(60,40,20,0.12), 0 4px 12px rgba(60,40,20,0.06); position: relative; z-index: 2; }
+  .hero-card::before { content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 3px; background: linear-gradient(90deg, var(--terra), #e8845a, var(--sage)); border-radius: 0 0 4px 4px; }
+  .card-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--terra); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); animation: blink 2s infinite; flex-shrink: 0; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+  .card-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 18px; color: var(--ink); line-height: 1.3; }
+
+  /* NAME CHECK */
+  .name-check-wrap { position: relative; margin-bottom: 10px; }
+  .name-input { width: 100%; padding: 13px 110px 13px 16px; border: 1.5px solid var(--border); border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s, background 0.2s; }
+  .name-input:focus { border-color: var(--terra); background: white; }
+  .name-input::placeholder { color: var(--muted); font-weight: 300; }
+  .name-input.checking { border-color: var(--terra); }
+  .name-input.available { border-color: var(--sage); background: white; }
+  .name-input.taken { border-color: #dc2626; background: white; }
+
+  .check-btn { position: absolute; right: 6px; top: 6px; bottom: 6px; background: var(--terra); color: white; border: none; border-radius: 8px; padding: 0 16px; font-size: 0.8rem; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.2s; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .check-btn:hover { background: var(--bark); }
+  .check-btn:disabled { background: var(--muted); cursor: not-allowed; }
+
+  .spinner { display: none; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.35); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* RESULT BOX */
+  .name-result {
+    border-radius: 12px; font-size: 0.84rem; font-weight: 500;
+    padding: 0; max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s, opacity 0.25s;
+    opacity: 0; margin-bottom: 0;
+  }
+  .name-result.show { max-height: 200px; padding: 12px 16px; opacity: 1; margin-bottom: 10px; }
+  .name-result.available { background: var(--sage-light); color: var(--sage); border: 1px solid rgba(74,124,89,0.2); }
+  .name-result.taken { background: #fee2e2; color: #dc2626; border: 1px solid rgba(220,38,38,0.2); }
+  .name-result.checking { background: var(--terra-light); color: var(--terra); border: 1px solid rgba(196,92,46,0.2); }
+  .name-result.error { background: var(--sand); color: var(--muted); border: 1px solid var(--border); }
+
+  .result-icon { font-size: 1rem; margin-right: 4px; }
+  .result-main { font-weight: 600; }
+  .result-sub { font-size: 0.76rem; margin-top: 4px; opacity: 0.8; }
+  .similar-names { margin-top: 8px; }
+  .similar-names .label { font-size: 0.72rem; opacity: 0.7; margin-bottom: 4px; }
+  .similar-chip { display: inline-block; background: rgba(0,0,0,0.06); padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; margin: 2px; }
+
+  .suffix-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 14px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+  .card-steps { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+  .cs-row { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--ink); }
+  .cs-num { width: 24px; height: 24px; border-radius: 50%; background: var(--terra-light); color: var(--terra); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; }
+
+  .price-band { background: var(--ink); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .pb-left .pb-label { font-size: 0.74rem; color: rgba(255,255,255,0.45); }
+  .pb-price { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: white; letter-spacing: -0.04em; line-height: 1; }
+  .pb-price sup { font-size: 1rem; vertical-align: super; font-weight: 600; }
+  .pb-incl { font-size: 0.68rem; color: rgba(255,255,255,0.3); margin-top: 2px; }
+  .pb-cta { background: var(--terra); color: white; padding: 10px 20px; border-radius: 100px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .pb-cta:hover { background: #b34e24; }
+
+  /* FLOATING BADGES */
+  .fb { position: absolute; background: white; border-radius: 12px; padding: 10px 14px; box-shadow: 0 8px 28px rgba(60,40,20,0.12); display: flex; align-items: center; gap: 9px; font-size: 0.76rem; z-index: 3; }
+  .fb.fb1 { top: 4px; right: 4px; animation: floaty 4s ease-in-out infinite; }
+  .fb.fb2 { bottom: 4px; left: 4px; animation: floaty 4s 2s ease-in-out infinite; }
+  @keyframes floaty { 0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)} }
+  .fb strong { display: block; color: var(--ink); font-weight: 600; font-size: 0.79rem; }
+  .fb span { color: var(--muted); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none} }
+
+  /* MARQUEE */
+  .marquee { background: var(--ink); padding: 14px 0; overflow: hidden; }
+  .marquee-track { display: flex; gap: 52px; animation: scroll 28s linear infinite; white-space: nowrap; }
+  .mi { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: flex; align-items: center; gap: 12px; }
+  .mi::before { content: '◆'; color: var(--terra); font-size: 0.45rem; }
+  @keyframes scroll { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+
+  /* SECTIONS */
+  .section { padding: 96px 56px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; background: var(--terra-light); border: 1px solid rgba(196,92,46,0.15); padding: 5px 14px; border-radius: 100px; font-size: 0.74rem; font-weight: 700; color: var(--terra); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.9rem,3.2vw,2.8rem); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 14px; }
+  .sub { font-size: 1rem; color: var(--muted); line-height: 1.65; font-weight: 300; max-width: 500px; }
+
+  /* HOW */
+  .how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 56px; border-radius: 20px; overflow: hidden; background: var(--border); }
+  .how-card { background: white; padding: 36px 28px; transition: background 0.2s; }
+  .how-card:hover { background: var(--warm-white); }
+  .hc-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: rgba(196,92,46,0.09); line-height: 1; margin-bottom: 18px; letter-spacing: -0.05em; }
+  .hc-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+  .how-card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+  .how-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+  .hc-tag { display: inline-block; margin-top: 14px; background: var(--terra-light); color: var(--terra); padding: 3px 12px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; }
+
+  /* PRICING */
+  .pricing-section { background: var(--warm-white); }
+  .pricing-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr 0.9fr; gap: 18px; margin-top: 56px; align-items: start; }
+  .p-main { background: var(--ink); border-radius: 24px; padding: 38px; color: white; position: relative; box-shadow: 0 24px 60px rgba(61,44,30,0.28); }
+  .p-main::before { content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 3px; background: linear-gradient(90deg, var(--terra), #e07050); border-radius: 0 0 4px 4px; }
+  .p-tier { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(196,92,46,0.9); font-weight: 700; margin-bottom: 6px; }
+  .p-name { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: white; margin-bottom: 8px; }
+  .p-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.55; margin-bottom: 26px; }
+  .p-price-row { display: flex; align-items: baseline; gap: 3px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
+  .p-curr { font-size: 1.2rem; font-weight: 600; color: white; margin-top: 6px; }
+  .p-amt { font-family: 'Fraunces', serif; font-size: 3.6rem; font-weight: 700; color: white; line-height: 1; letter-spacing: -0.04em; }
+  .p-onetime { font-size: 0.7rem; margin-left: 8px; align-self: center; background: rgba(196,92,46,0.25); color: #f0a080; padding: 3px 10px; border-radius: 4px; }
+  .p-breakdown { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 14px; margin-bottom: 22px; font-size: 0.78rem; }
+  .pb-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; color: rgba(255,255,255,0.6); }
+  .pb-row.profit .amt { color: #4ade80; }
+  .pb-row.total { color: white; font-weight: 600; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 6px; padding-top: 10px; }
+  .p-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+  .p-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.83rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .pf-check { color: #4ade80; font-weight: 700; flex-shrink: 0; }
+  .p-cta-main { display: block; text-align: center; width: 100%; background: var(--terra); color: white; padding: 14px; border-radius: 100px; font-size: 0.92rem; font-weight: 700; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 16px rgba(196,92,46,0.4); }
+  .p-cta-main:hover { background: #b34e24; transform: translateY(-1px); }
+  .p-soon { background: white; border: 1.5px dashed var(--border); border-radius: 24px; padding: 32px; }
+  .soon-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--sand); color: var(--muted); padding: 4px 12px; border-radius: 100px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .p-soon-name { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; opacity: 0.55; }
+  .p-soon-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; font-weight: 300; margin-bottom: 22px; }
+  .p-soon-price { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700; color: var(--sand); letter-spacing: -0.04em; margin-bottom: 18px; filter: blur(5px); user-select: none; }
+  .p-soon-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .p-soon-list li { font-size: 0.82rem; color: var(--muted); opacity: 0.5; }
+  .p-notify { width: 100%; padding: 11px; border-radius: 100px; border: 1.5px solid var(--border); background: transparent; font-size: 0.83rem; font-weight: 600; color: var(--muted); cursor: not-allowed; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+  /* COMPARE */
+  .compare-section { background: white; }
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 48px; font-size: 0.88rem; }
+  .compare-table th { text-align: left; padding: 12px 16px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); border-bottom: 2px solid var(--border); }
+  .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td.provider { font-weight: 600; }
+  .compare-table td.price { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1rem; }
+  .row-formd { background: rgba(196,92,46,0.04); }
+  .formd-price { color: var(--terra); }
+  .check-yes { color: var(--sage); font-weight: 700; }
+  .check-no { color: var(--sand); }
+  .check-partial { color: var(--muted); font-size: 0.82rem; }
+  .winner-badge { display: inline-flex; align-items: center; gap: 4px; background: var(--terra); color: white; padding: 2px 10px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-left: 6px; }
+
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px; }
+  .testi { background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 26px; transition: all 0.2s; }
+  .testi:hover { border-color: var(--terra); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(60,40,20,0.08); }
+  .testi-stars { color: var(--terra); letter-spacing: 3px; margin-bottom: 12px; font-size: 0.82rem; }
+  .testi blockquote { font-family: 'Fraunces', serif; font-size: 0.93rem; font-style: italic; line-height: 1.6; color: var(--ink); margin-bottom: 18px; }
+  .testi-who { display: flex; align-items: center; gap: 10px; }
+  .testi-av { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; color: white; flex-shrink: 0; }
+  .testi-name { font-size: 0.81rem; font-weight: 600; }
+  .testi-role { font-size: 0.71rem; color: var(--muted); }
+
+  /* FAQ */
+  .faq-section { background: var(--cream); }
+  .faq-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 52px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 18px 0; text-align: left; gap: 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--ink); transition: color 0.2s; }
+  .faq-q:hover { color: var(--terra); }
+  .fq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--terra-light); color: var(--terra); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: all 0.2s; }
+  .faq-item.open .fq-icon { transform: rotate(45deg); background: var(--terra); color: white; }
+  .faq-a { font-size: 0.84rem; color: var(--muted); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; font-weight: 300; }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 16px; }
+  .trust-box { background: white; border-radius: 20px; padding: 32px; position: sticky; top: 96px; }
+  .trust-box h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; }
+  .t-items { display: flex; flex-direction: column; gap: 14px; }
+  .t-item { display: flex; gap: 12px; align-items: flex-start; }
+  .t-ic { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .t-ic.g { background: var(--sage-light); } .t-ic.o { background: var(--terra-light); } .t-ic.s { background: var(--sand); }
+  .t-txt strong { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
+  .t-txt span { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
+
+  /* CTA */
+  .cta-band { background: var(--bark); padding: 90px 56px; text-align: center; position: relative; overflow: hidden; }
+  .cta-band::before { content: '🇮🇪'; position: absolute; font-size: 280px; opacity: 0.04; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+  .cta-band h2 { color: white; font-size: clamp(2rem,3.5vw,3.2rem); margin-bottom: 14px; position: relative; }
+  .cta-band p { color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 420px; margin: 0 auto 36px; font-weight: 300; position: relative; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; position: relative; }
+  .btn-white { background: white; color: var(--bark); padding: 14px 32px; border-radius: 100px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; }
+  .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+  .btn-outline-white { border: 2px solid rgba(255,255,255,0.3); color: white; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; }
+  .btn-outline-white:hover { border-color: white; }
+
+  /* FOOTER */
+  footer { background: var(--ink); padding: 56px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .f-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.3rem; color: white; display: block; margin-bottom: 10px; }
+  .f-logo .dot { color: var(--terra); }
+  .f-desc { font-size: 0.81rem; color: rgba(255,255,255,0.35); line-height: 1.6; font-weight: 300; max-width: 210px; }
+  .f-col h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+  .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .f-col a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+  .f-col a:hover { color: white; }
+  .f-bot { background: var(--ink); padding: 18px 56px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+  .f-bot p { font-size: 0.76rem; color: rgba(255,255,255,0.25); font-weight: 300; }
+  .f-bot a { color: rgba(255,255,255,0.25); text-decoration: none; }
+
+  /* REVEAL */
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  .rv.d1 { transition-delay: 0.1s; } .rv.d2 { transition-delay: 0.2s; } .rv.d3 { transition-delay: 0.3s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; } .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; }
+    .section { padding: 60px 24px; }
+    .how-grid, .testi-grid { grid-template-columns: 1fr; }
+    .pricing-wrap { grid-template-columns: 1fr; }
+    .faq-inner { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr 1fr; padding: 40px 24px 0; }
+    .f-bot { padding: 16px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    .cta-band { padding: 60px 24px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="topnav">
+  <a href="#" class="logo">FORMD<span class="dot">.</span>ai</a>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#pricing" class="nav-btn">Form my company →</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">🇮🇪 Irish Company Formation · AI-powered</div>
+    <h1>Register your<br>Irish company<br>for <em><span class="price-pill"><span class="big">€149</span></span></em></h1>
+    <p class="hero-sub">Fill in one form. We handle the CRO paperwork, your Constitution, and every document. No solicitor needed.</p>
+    <div class="cro-note">💡 Includes <span>€50 CRO filing fee</span> — everything all-in, no surprises</div>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-terra">Get started for €149 →</a>
+      <a href="#how" class="btn-ghost">How it works</a>
+    </div>
+    <div class="hero-trust">
+      <div class="avatars">
+        <span style="background:#c45c2e;">JD</span>
+        <span style="background:#4a7c59;">CM</span>
+        <span style="background:#3d2c1e;">TR</span>
+        <span style="background:#7a5c40;">SR</span>
+      </div>
+      <span><strong style="color:var(--ink);">180+ companies</strong> formed · ★★★★★ 4.9/5</span>
+    </div>
+  </div>
+
+  <div class="hero-card-wrap">
+    <div class="fb fb1">
+      <span style="font-size:18px">⚡</span>
+      <div><strong>Same-day docs</strong><span>Submit before 3pm</span></div>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-label"><div class="live-dot"></div> Live CRO name check</div>
+      <div class="card-title">Is your company name available?</div>
+
+      <div class="name-check-wrap">
+        <input class="name-input" id="nameInput" type="text"
+          placeholder="e.g. Phaos Technologies" maxlength="60" autocomplete="off"
+          spellcheck="false">
+        <button class="check-btn" id="checkBtn" onclick="checkName()">
+          <div class="spinner" id="spinner"></div>
+          <span id="btnText">Check →</span>
+        </button>
+      </div>
+
+      <div class="name-result" id="nameResult"></div>
+
+      <div class="suffix-note">🔍 Searches the live CRO register · "Limited" suffix added automatically</div>
+
+      <hr class="divider">
+
+      <div class="card-steps">
+        <div class="cs-row"><div class="cs-num">1</div> Fill our simple online form (~8 min)</div>
+        <div class="cs-row"><div class="cs-num">2</div> We prepare all your documents same day</div>
+        <div class="cs-row"><div class="cs-num">3</div> We file with CRO — you receive your certificate</div>
+      </div>
+
+      <div class="price-band">
+        <div class="pb-left">
+          <div class="pb-label">All-inclusive price</div>
+          <div class="pb-price"><sup>€</sup>149</div>
+          <div class="pb-incl">incl. €50 CRO fee · one-time payment</div>
+        </div>
+        <a href="#" class="pb-cta" onclick="openForm(event)">Start now →</a>
+      </div>
+    </div>
+
+    <div class="fb fb2">
+      <span style="font-size:18px">✅</span>
+      <div><strong>CRO Registered</strong><span>3–5 working days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="mi">CRO Filing Included</span><span class="mi">Live Name Check</span><span class="mi">Company Constitution</span><span class="mi">Director Consents</span><span class="mi">Share Certificates</span><span class="mi">Same-Day Documents</span><span class="mi">Human Review</span><span class="mi">3–5 Day Registration</span><span class="mi">No Hidden Fees</span>
+    <span class="mi">CRO Filing Included</span><span class="mi">Live Name Check</span><span class="mi">Company Constitution</span><span class="mi">Director Consents</span><span class="mi">Share Certificates</span><span class="mi">Same-Day Documents</span><span class="mi">Human Review</span><span class="mi">3–5 Day Registration</span><span class="mi">No Hidden Fees</span>
+  </div>
+</div>
+
+<!-- ══════════ HOW ══════════ -->
+<section class="section" id="how">
+  <div class="rv">
+    <div class="chip">How it works</div>
+    <h2>Done in three steps.<br>Start to finish.</h2>
+    <p class="sub">You do 8 minutes of form-filling. We do everything else.</p>
+  </div>
+  <div class="how-grid rv">
+    <div class="how-card">
+      <div class="hc-num">01</div><span class="hc-icon">📝</span>
+      <h3>Fill one form</h3>
+      <p>Plain English questions — no legal jargon. Tell us your company name, directors, and share structure. That's it.</p>
+      <span class="hc-tag">⏱ ~8 minutes</span>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">02</div><span class="hc-icon">🤖</span>
+      <h3>We prepare everything</h3>
+      <p>AI generates your full document pack: A1 form, Constitution, director consents, share certificates. A human reviews before filing.</p>
+      <span class="hc-tag">⏱ Same day</span>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">03</div><span class="hc-icon">🎉</span>
+      <h3>Certificate arrives</h3>
+      <p>We file with the CRO on your behalf. Your Certificate of Incorporation and full document pack land in your inbox.</p>
+      <span class="hc-tag">⏱ 3–5 working days</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PRICING ══════════ -->
+<section class="section pricing-section" id="pricing">
+  <div class="rv" style="text-align:center; max-width:540px; margin:0 auto;">
+    <div class="chip">Pricing</div>
+    <h2>One clear price.<br>Nothing hidden.</h2>
+    <p class="sub" style="margin:0 auto;">€149 all-in. The €50 CRO fee is included. You pay €99 for us to do everything properly.</p>
+  </div>
+  <div class="pricing-wrap">
+    <div class="p-main rv">
+      <div class="p-tier">Available now</div>
+      <div class="p-name">Essential Formation</div>
+      <div class="p-desc">Everything you need to get your Irish limited company registered — without the solicitor bill.</div>
+      <div class="p-price-row">
+        <span class="p-curr">€</span><span class="p-amt">149</span>
+        <span class="p-onetime">one-time · all-in</span>
+      </div>
+      <div class="p-breakdown">
+        <div class="pb-row"><span>CRO filing fee</span><span class="amt">€50</span></div>
+        <div class="pb-row profit"><span>Our service fee</span><span class="amt">€99</span></div>
+        <div class="pb-row total"><span>You pay total</span><span class="amt">€149</span></div>
+      </div>
+      <ul class="p-features">
+        <li><span class="pf-check">✓</span> CRO A1 form — prepared &amp; filed</li>
+        <li><span class="pf-check">✓</span> Company Constitution (tailored LTD)</li>
+        <li><span class="pf-check">✓</span> Share certificates (up to 2 shareholders)</li>
+        <li><span class="pf-check">✓</span> Director &amp; secretary consent letters</li>
+        <li><span class="pf-check">✓</span> Live CRO name availability check</li>
+        <li><span class="pf-check">✓</span> Full digital document pack</li>
+        <li><span class="pf-check">✓</span> Human review before filing</li>
+        <li><span class="pf-check">✓</span> Email support throughout</li>
+      </ul>
+      <a href="#" class="p-cta-main" onclick="openForm(event)">Get started — €149 →</a>
+    </div>
+    <div class="p-soon rv d1">
+      <div class="soon-badge">🕐 Coming soon</div>
+      <div class="p-soon-name">Launchpad</div>
+      <div class="p-soon-desc">Essential + Revenue, VAT, RBO filing, and 12 months registered address.</div>
+      <div class="p-soon-price">€???</div>
+      <ul class="p-soon-list"><li>✓ Everything in Essential</li><li>✓ Revenue &amp; VAT registration</li><li>✓ RBO filing</li><li>✓ 12 months registered address</li></ul>
+      <button class="p-notify" disabled>🔔 Notify me when live</button>
+    </div>
+    <div class="p-soon rv d2">
+      <div class="soon-badge">🕐 Coming soon</div>
+      <div class="p-soon-name">Founders Pack</div>
+      <div class="p-soon-desc">Everything in Launchpad + shareholders agreement, bank account, company secretary.</div>
+      <div class="p-soon-price">€???</div>
+      <ul class="p-soon-list"><li>✓ Everything in Launchpad</li><li>✓ Shareholders agreement</li><li>✓ Bank account intro</li><li>✓ Company secretary yr 1</li></ul>
+      <button class="p-notify" disabled>🔔 Notify me when live</button>
+    </div>
+  </div>
+  <p class="rv" style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted);">All prices include VAT where applicable. Questions? hello@formd.ai</p>
+</section>
+
+<!-- ══════════ COMPARE ══════════ -->
+<section class="section compare-section">
+  <div class="rv">
+    <div class="chip">How we compare</div>
+    <h2>The best-value formation<br>service in Ireland</h2>
+    <p class="sub">We pass the €50 CRO fee straight through and charge a flat €99. Nobody else offers a live name check.</p>
+  </div>
+  <div style="overflow-x:auto;margin-top:48px;" class="rv">
+    <table class="compare-table">
+      <thead><tr><th>Provider</th><th>All-in price</th><th>CRO fee included</th><th>Live name check</th><th>Same-day docs</th><th>Human review</th></tr></thead>
+      <tbody>
+        <tr class="row-formd"><td class="provider">FORMD.ai <span class="winner-badge">⭐ Best value</span></td><td class="price formd-price">€149</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td class="provider">Incorpro.ie</td><td class="price">~€122</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-partial">Varies</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td class="provider">Setupyourcompany.ie</td><td class="price">~€135</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-partial">Varies</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td class="provider">Typical accountant</td><td class="price">€500–€1,200</td><td><span class="check-partial">Sometimes</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td class="provider">Solicitor</td><td class="price">€800–€2,000</td><td><span class="check-partial">Sometimes</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td class="provider">DIY via CRO</td><td class="price">€50</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section class="section" style="background:white;">
+  <div class="rv"><div class="chip">Real founders</div><h2>They got sorted.<br>You can too.</h2></div>
+  <div class="testi-grid">
+    <div class="testi rv"><div class="testi-stars">★★★★★</div><blockquote>"I'd been putting this off for months. FORMD sorted it in four days for less than a solicitor's initial consultation."</blockquote><div class="testi-who"><div class="testi-av" style="background:#c45c2e;">CM</div><div><div class="testi-name">Ciara M.</div><div class="testi-role">Consultant · Dublin</div></div></div></div>
+    <div class="testi rv d1"><div class="testi-stars">★★★★★</div><blockquote>"The live name checker sold me before I even paid. Checked three names in two minutes — brilliant feature."</blockquote><div class="testi-who"><div class="testi-av" style="background:#4a7c59;">PF</div><div><div class="testi-name">Paul F.</div><div class="testi-role">Tech Founder · Cork</div></div></div></div>
+    <div class="testi rv d2"><div class="testi-stars">★★★★★</div><blockquote>"€149 all-in. Certificate in three days. More thorough than what my accountant produced for five times the price."</blockquote><div class="testi-who"><div class="testi-av" style="background:#3d2c1e;">SR</div><div><div class="testi-name">Sarah R.</div><div class="testi-role">Founder · Galway</div></div></div></div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section faq-section" id="faq">
+  <div class="rv"><div class="chip">FAQ</div><h2>Questions we actually<br>get asked</h2></div>
+  <div class="faq-inner">
+    <div class="rv">
+      <div class="faq-item"><button class="faq-q">Why is FORMD cheaper than a solicitor? <em class="fq-icon">+</em></button><div class="faq-a">Because we're not a solicitor. Solicitors charge professional rates for what is largely document assembly. Our AI handles that instantly, a human checks everything, and we file. Same result — fraction of the cost.</div></div>
+      <div class="faq-item"><button class="faq-q">How does the live name checker work? <em class="fq-icon">+</em></button><div class="faq-a">We connect to the CRO's free public search API (services.cro.ie) in real time and search the live register. If your name is taken we tell you immediately so you can pick an alternative before paying a cent.</div></div>
+      <div class="faq-item"><button class="faq-q">What does the €50 CRO fee cover? <em class="fq-icon">+</em></button><div class="faq-a">The CRO charges €50 to process an A1 incorporation form. It's a mandatory government fee — we pass it through at cost. Our service fee is the remaining €99.</div></div>
+      <div class="faq-item"><button class="faq-q">How long does registration take? <em class="fq-icon">+</em></button><div class="faq-a">We prepare documents same day (submit before 3pm). The CRO typically registers ordinary A1 forms within 3–5 working days and issues your Certificate of Incorporation.</div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to be based in Ireland? <em class="fq-icon">+</em></button><div class="faq-a">No. You can be based anywhere. You need at least one EEA-resident director. If all directors are outside the EEA, a Section 137 bond (€25,000) is required. Get in touch and we'll advise.</div></div>
+      <div class="faq-item"><button class="faq-q">What about Revenue and VAT registration? <em class="fq-icon">+</em></button><div class="faq-a">That's coming in our Launchpad tier. Essential covers CRO incorporation only. In the meantime, Revenue registration is straightforward via ROS — we'll point you to the right forms for free.</div></div>
+    </div>
+    <div class="trust-box rv d1">
+      <h3>Why FORMD works</h3>
+      <div class="t-items">
+        <div class="t-item"><div class="t-ic o">🔴</div><div class="t-txt"><strong>Live CRO name search</strong><span>Real-time API check against the live register — no guessing.</span></div></div>
+        <div class="t-item"><div class="t-ic g">🤝</div><div class="t-txt"><strong>Human checks every filing</strong><span>AI prepares it, a person reviews it before it goes to the CRO.</span></div></div>
+        <div class="t-item"><div class="t-ic g">⚡</div><div class="t-txt"><strong>Same-day documents</strong><span>Submit before 3pm, your docs are ready the same working day.</span></div></div>
+        <div class="t-item"><div class="t-ic s">🔒</div><div class="t-txt"><strong>€149 is €149</strong><span>The CRO fee is included. Nothing else to pay, ever.</span></div></div>
+        <div class="t-item"><div class="t-ic o">💬</div><div class="t-txt"><strong>Real support, real people</strong><span>Email us any time. You'll hear back from someone who knows your file.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta-band">
+  <h2 class="rv">Ready to make it official?</h2>
+  <p class="rv d1">Your Irish company is 8 minutes of form-filling away. €149 all-in.</p>
+  <div class="cta-btns rv d2">
+    <a href="#" class="btn-white" onclick="openForm(event)">Start for €149 →</a>
+    <a href="/cdn-cgi/l/email-protection#224a474e4e4d62444d504f460c434b" class="btn-outline-white">Ask us a question</a>
+  </div>
+</section>
+
+<footer>
+  <div><span class="f-logo">FORMD<span class="dot">.</span>ai</span><p class="f-desc">Irish company formation, done properly. AI speed. Human care. €149 all-in.</p></div>
+  <div class="f-col"><h4>Service</h4><ul><li><a href="#pricing">Essential — €149</a></li><li><a href="#pricing">Launchpad (soon)</a></li><li><a href="#pricing">Founders Pack (soon)</a></li></ul></div>
+  <div class="f-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="/cdn-cgi/l/email-protection#2e464b4242416e48415c434a004f47">Contact</a></li></ul></div>
+  <div class="f-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Cookies</a></li></ul></div>
+</footer>
+<div class="f-bot"><p>© 2025 FORMD.ai · Registered in Ireland · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d35383131321d3b322f3039733c34">[email&#160;protected]</a></p><p><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ═══════════════════════════════════════════════════════
+  // CONFIGURATION — replace with your Cloudflare Worker URL
+  // after deploying cro-worker.js
+  // ═══════════════════════════════════════════════════════
+  const PROXY_URL = 'https://cro-proxy.mcdonaldjordan71.workers.dev';
+
+  // ═══════════════════════════════════════════════════════
+  // NAME CHECKER
+  // ═══════════════════════════════════════════════════════
+  let checkTimer = null;
+
+  function setResult(type, html) {
+    const el = document.getElementById('nameResult');
+    el.className = 'name-result ' + type + ' show';
+    el.innerHTML = html;
+  }
+
+  function clearResult() {
+    const el = document.getElementById('nameResult');
+    el.className = 'name-result';
+    el.innerHTML = '';
+  }
+
+  function setInputState(state) {
+    const inp = document.getElementById('nameInput');
+    inp.className = 'name-input ' + state;
+  }
+
+  function setLoading(loading) {
+    const spinner = document.getElementById('spinner');
+    const btnText = document.getElementById('btnText');
+    const btn = document.getElementById('checkBtn');
+    spinner.style.display = loading ? 'block' : 'none';
+    btnText.textContent = loading ? '' : 'Check →';
+    btn.disabled = loading;
+  }
+
+  async function checkName() {
+    const input = document.getElementById('nameInput');
+    const name = input.value.trim();
+
+    if (!name || name.length < 2) {
+      setResult('error', '⚠️ Please enter a company name first.');
+      return;
+    }
+
+    setLoading(true);
+    setInputState('checking');
+    setResult('checking', '🔍 Searching the live CRO register...');
+
+    try {
+      const res = await fetch(`${PROXY_URL}?name=${encodeURIComponent(name)}`, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+
+      if (data.error) throw new Error(data.error);
+
+      if (data.available) {
+        setInputState('available');
+        let html = `<span class="result-icon">✅</span>
+          <div>
+            <div class="result-main"><strong>"${escHtml(name)} Limited"</strong> appears to be available!</div>
+            <div class="result-sub">No exact match found on the CRO register. We'll confirm on submission.</div>
+          </div>`;
+
+        if (data.similarNames && data.similarNames.length > 0) {
+          html += `<div class="similar-names">
+            <div class="label">Similar names already registered:</div>
+            ${data.similarNames.map(s => `<span class="similar-chip">${escHtml(s.name)}</span>`).join('')}
+          </div>`;
+        }
+        setResult('available', html);
+      } else {
+        setInputState('taken');
+        const match = data.exactMatch;
+        setResult('taken', `<span class="result-icon">❌</span>
+          <div>
+            <div class="result-main"><strong>"${escHtml(match.name)}"</strong> is already registered (No. ${escHtml(String(match.number || ''))}).</div>
+            <div class="result-sub">Status: ${escHtml(match.status || 'Registered')} · Please choose a different name.</div>
+          </div>`);
+      }
+
+    } catch (err) {
+      // Graceful fallback if proxy not yet deployed
+      setInputState('');
+      setResult('error', `⚠️ <strong>Live check unavailable</strong> — deploy the Cloudflare Worker to enable this. 
+        <div class="result-sub" style="margin-top:6px;">You can also <a href="https://core.cro.ie" target="_blank" style="color:var(--terra);">check manually on CORE</a> while we set up the proxy.</div>`);
+    }
+
+    setLoading(false);
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // Auto-check after 600ms pause while typing
+  document.getElementById('nameInput').addEventListener('input', function() {
+    clearTimeout(checkTimer);
+    const val = this.value.trim();
+    if (val.length < 2) { clearResult(); setInputState(''); return; }
+    checkTimer = setTimeout(checkName, 600);
+  });
+
+  // Enter key triggers check
+  document.getElementById('nameInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { clearTimeout(checkTimer); checkName(); }
+  });
+
+  // ═══════════════════════════════════════════════════════
+  // FAQ ACCORDION
+  // ═══════════════════════════════════════════════════════
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════
+  // SCROLL REVEAL
+  // ═══════════════════════════════════════════════════════
+  const rvObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); rvObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el => rvObserver.observe(el));
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     CHECKOUT FORM OVERLAY
+     ══════════════════════════════════════════════════════ -->
+<style>
+  /* OVERLAY */
+  #formOverlay {
+    position: fixed; inset: 0; z-index: 500;
+    display: none; align-items: stretch;
+    animation: overlayIn 0.4s ease;
+  }
+  #formOverlay.open { display: flex; }
+  @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .overlay-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(28,25,23,0.7);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+  }
+
+  .overlay-panel {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 360px;
+    width: 95vw; max-width: 1100px;
+    max-height: 92vh;
+    margin: auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    animation: panelUp 0.4s ease;
+  }
+  @keyframes panelUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  /* FORM SIDE */
+  .of-form {
+    background: var(--cream);
+    overflow-y: auto;
+    padding: 44px 48px 60px;
+  }
+
+  .of-close {
+    position: absolute; top: 16px; right: 16px; z-index: 10;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none; cursor: pointer;
+    font-size: 18px; color: white; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .of-close:hover { background: rgba(255,255,255,0.3); }
+
+  /* PROGRESS */
+  .of-progress {
+    display: flex; align-items: center; margin-bottom: 36px;
+  }
+  .of-step-dot {
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    flex: 1; position: relative;
+  }
+  .of-step-dot:not(:last-child)::after {
+    content: ''; position: absolute;
+    top: 13px; left: calc(50% + 13px);
+    width: calc(100% - 26px); height: 2px;
+    background: var(--sand); transition: background 0.4s;
+  }
+  .of-step-dot.done:not(:last-child)::after { background: var(--terra); }
+  .of-dot-circle {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: 2px solid var(--sand); background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; color: var(--muted);
+    transition: all 0.3s; z-index: 1; position: relative;
+  }
+  .of-step-dot.active .of-dot-circle { border-color: var(--terra); background: var(--terra); color: white; }
+  .of-step-dot.done .of-dot-circle { border-color: var(--terra); background: var(--terra); color: white; }
+  .of-dot-label { font-size: 0.65rem; font-weight: 600; color: var(--muted); text-align: center; letter-spacing: 0.04em; white-space: nowrap; }
+  .of-step-dot.active .of-dot-label,
+  .of-step-dot.done .of-dot-label { color: var(--terra); }
+
+  /* STEP HEADER */
+  .of-step-header { margin-bottom: 28px; }
+  .of-chip {
+    display: inline-flex; align-items: center;
+    background: var(--terra-light); border: 1px solid rgba(196,92,46,0.15);
+    padding: 3px 12px; border-radius: 100px;
+    font-size: 0.68rem; font-weight: 700; color: var(--terra);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .of-title {
+    font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700;
+    letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 6px;
+  }
+  .of-sub { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
+  /* FIELDS */
+  .of-fields { display: flex; flex-direction: column; gap: 18px; }
+  .of-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .of-field { display: flex; flex-direction: column; gap: 5px; }
+  .of-field label { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
+  .of-field label .req { color: var(--terra); }
+  .of-field .hint { font-size: 0.7rem; color: var(--muted); font-weight: 300; }
+  .of-field input, .of-field select {
+    width: 100%; padding: 10px 13px;
+    border: 1.5px solid var(--border); border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem; color: var(--ink);
+    background: white; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+  .of-field input:focus, .of-field select:focus {
+    border-color: var(--terra);
+    box-shadow: 0 0 0 3px rgba(196,92,46,0.08);
+  }
+  .of-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7968' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 13px center;
+    padding-right: 34px;
+  }
+  .of-field-err { font-size: 0.72rem; color: #dc2626; display: none; }
+  .of-field-err.show { display: block; }
+
+  /* PERSON BLOCK */
+  .of-person {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 20px; position: relative; margin-bottom: 12px;
+  }
+  .of-person::before {
+    content: ''; position: absolute; top: 0; left: 18px; right: 18px;
+    height: 3px; background: var(--terra); border-radius: 0 0 4px 4px;
+  }
+  .of-person-label {
+    font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600;
+    margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .of-remove {
+    background: none; border: none; cursor: pointer;
+    font-size: 0.73rem; color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500; padding: 3px 9px; border-radius: 6px; transition: all 0.2s;
+  }
+  .of-remove:hover { background: #fee2e2; color: #dc2626; }
+  .of-add-btn {
+    display: flex; align-items: center; gap: 7px;
+    background: none; border: 1.5px dashed var(--border);
+    border-radius: 10px; padding: 10px 16px; width: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.83rem; font-weight: 600; color: var(--muted);
+    cursor: pointer; transition: all 0.2s; margin-top: 4px;
+  }
+  .of-add-btn:hover { border-color: var(--terra); color: var(--terra); background: var(--terra-light); }
+
+  /* NAV */
+  .of-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+  }
+  .of-btn-back {
+    background: none; border: 1.5px solid var(--border);
+    color: var(--muted); padding: 11px 22px; border-radius: 100px;
+    font-size: 0.86rem; font-weight: 600; cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.2s;
+  }
+  .of-btn-back:hover { border-color: var(--ink); color: var(--ink); }
+  .of-btn-next {
+    background: var(--terra); color: white;
+    border: none; padding: 12px 28px; border-radius: 100px;
+    font-size: 0.88rem; font-weight: 700; cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(196,92,46,0.3);
+  }
+  .of-btn-next:hover { background: var(--terra-deep); transform: translateY(-1px); }
+
+  /* STEP PANELS */
+  .of-panel { display: none; }
+  .of-panel.active { display: block; animation: fadeUp 0.35s ease; }
+
+  /* SUMMARY SIDEBAR */
+  .of-sidebar {
+    background: var(--ink);
+    padding: 44px 32px;
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+  }
+  .of-sidebar-title {
+    font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700;
+    color: white; margin-bottom: 22px; letter-spacing: -0.02em;
+  }
+  .of-sum-section { margin-bottom: 20px; }
+  .of-sum-section h4 {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(196,92,46,0.9); margin-bottom: 8px;
+  }
+  .of-sum-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 10px; padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.78rem;
+  }
+  .of-sum-row:last-child { border-bottom: none; }
+  .os-label { color: rgba(255,255,255,0.35); flex-shrink: 0; }
+  .os-val { color: white; font-weight: 500; text-align: right; }
+  .os-val.empty { color: rgba(255,255,255,0.2); font-style: italic; font-weight: 300; }
+
+  .of-price-box {
+    background: rgba(255,255,255,0.05); border-radius: 12px;
+    padding: 16px; margin-top: auto;
+  }
+  .of-price-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 4px 0; }
+  .of-price-row .pl { color: rgba(255,255,255,0.4); }
+  .of-price-row .pv { color: rgba(255,255,255,0.8); }
+  .of-price-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 10px; margin-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .opt-label { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+  .opt-val { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: white; letter-spacing: -0.04em; }
+
+  .of-trust { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .of-trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+  .of-trust-item::before { content: '✓'; color: #4ade80; font-weight: 700; flex-shrink: 0; }
+
+  /* REVIEW */
+  .of-review-section { margin-bottom: 20px; }
+  .of-review-section h3 {
+    font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .of-edit { font-size: 0.73rem; font-weight: 500; color: var(--terra); cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .of-review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .of-rv-row .of-rv-label { color: var(--muted); font-size: 0.72rem; margin-bottom: 1px; }
+  .of-rv-row .of-rv-val { font-weight: 500; font-size: 0.82rem; color: var(--ink); }
+
+  /* SHARE INFO */
+  .of-share-info {
+    background: var(--sage-light); border: 1px solid rgba(74,124,89,0.2);
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 16px;
+    font-size: 0.8rem; color: var(--sage); line-height: 1.6;
+  }
+  .of-share-info strong { display: block; font-weight: 700; margin-bottom: 3px; }
+
+  /* CHECKBOX */
+  .of-check { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; }
+  .of-check input[type="checkbox"] { width: 17px; height: 17px; border-radius: 4px; flex-shrink: 0; margin-top: 2px; accent-color: var(--terra); cursor: pointer; }
+  .of-check label { font-size: 0.82rem; color: var(--ink); cursor: pointer; }
+  .of-check label a { color: var(--terra); text-decoration: none; }
+
+  /* PAY BUTTON */
+  .of-pay-btn {
+    width: 100%; background: var(--terra); color: white;
+    border: none; padding: 15px; border-radius: 100px;
+    font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s; margin-top: 20px;
+    box-shadow: 0 4px 18px rgba(196,92,46,0.35);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .of-pay-btn:hover { background: var(--terra-deep); transform: translateY(-2px); }
+
+  /* SUCCESS */
+  .of-success { display: none; text-align: center; padding: 40px 20px; }
+  .of-success.show { display: block; animation: fadeUp 0.5s ease; }
+  .of-success-icon { font-size: 56px; margin-bottom: 16px; }
+  .of-success h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.03em; }
+  .of-success p { font-size: 0.9rem; color: var(--muted); max-width: 380px; margin: 0 auto 24px; line-height: 1.7; }
+  .of-success-steps { background: white; border-radius: 14px; padding: 20px; max-width: 380px; margin: 0 auto; text-align: left; }
+  .of-ss-row { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+  .of-ss-row:last-child { border-bottom: none; }
+  .of-ss-num { width: 20px; height: 20px; border-radius: 50%; background: var(--terra-light); color: var(--terra); display: flex; align-items: center; justify-content: center; font-size: 0.66rem; font-weight: 700; flex-shrink: 0; }
+
+  @media (max-width: 800px) {
+    .overlay-panel { grid-template-columns: 1fr; width: 100%; max-width: 100%; height: 100vh; max-height: 100vh; border-radius: 0; }
+    .of-sidebar { display: none; }
+    .of-form { padding: 32px 24px 60px; }
+  }
+</style>
+
+<!-- OVERLAY HTML -->
+<div id="formOverlay">
+  <div class="overlay-backdrop" onclick="closeForm()"></div>
+  <div class="overlay-panel">
+
+    <!-- FORM SIDE -->
+    <div class="of-form">
+      <button class="of-close" onclick="closeForm()">✕</button>
+
+      <!-- PROGRESS -->
+      <div class="of-progress" id="ofProgress">
+        <div class="of-step-dot active" data-s="1"><div class="of-dot-circle">1</div><div class="of-dot-label">Company</div></div>
+        <div class="of-step-dot" data-s="2"><div class="of-dot-circle">2</div><div class="of-dot-label">Directors</div></div>
+        <div class="of-step-dot" data-s="3"><div class="of-dot-circle">3</div><div class="of-dot-label">Shares</div></div>
+        <div class="of-step-dot" data-s="4"><div class="of-dot-circle">4</div><div class="of-dot-label">Review</div></div>
+      </div>
+
+      <!-- STEP 1: COMPANY -->
+      <div class="of-panel active" id="ofStep1">
+        <div class="of-step-header">
+          <div class="of-chip">Step 1 of 4</div>
+          <h2 class="of-title">Your company details</h2>
+          <p class="of-sub">Tell us about the company you want to register.</p>
+        </div>
+        <div class="of-fields">
+          <div class="of-field">
+            <label>Company name <span class="req">*</span></label>
+            <input type="text" id="of_companyName" placeholder="e.g. Phaos Technologies" autocomplete="off">
+            <div class="hint">Do not include "Limited" — we add it automatically</div>
+            <div class="of-field-err" id="of_nameErr">Please enter your desired company name</div>
+          </div>
+          <div class="of-field">
+            <label>Registered office address <span class="req">*</span></label>
+            <input type="text" id="of_addr1" placeholder="Address line 1">
+            <input type="text" id="of_addr2" placeholder="Address line 2 (optional)" style="margin-top:8px;">
+            <div class="of-row" style="margin-top:8px; gap:10px;">
+              <input type="text" id="of_city" placeholder="City / Town">
+              <select id="of_county">
+                <option value="">County</option>
+                <option>Dublin</option><option>Cork</option><option>Galway</option><option>Limerick</option>
+                <option>Waterford</option><option>Kilkenny</option><option>Wexford</option><option>Clare</option>
+                <option>Kerry</option><option>Mayo</option><option>Sligo</option><option>Donegal</option>
+                <option>Louth</option><option>Meath</option><option>Kildare</option><option>Wicklow</option>
+                <option>Tipperary</option><option>Offaly</option><option>Laois</option><option>Carlow</option>
+                <option>Longford</option><option>Westmeath</option><option>Roscommon</option><option>Leitrim</option>
+                <option>Cavan</option><option>Monaghan</option>
+              </select>
+            </div>
+            <div class="of-field-err" id="of_addrErr">Please enter a registered office address</div>
+          </div>
+          <div class="of-row">
+            <div class="of-field">
+              <label>Company type <span class="req">*</span></label>
+              <select id="of_companyType">
+                <option value="LTD">LTD (most common)</option>
+                <option value="DAC">DAC</option>
+                <option value="UC">UC</option>
+              </select>
+            </div>
+            <div class="of-field">
+              <label>Contact email <span class="req">*</span></label>
+              <input type="email" id="of_email" placeholder="your@email.com">
+              <div class="of-field-err" id="of_emailErr">Please enter a valid email</div>
+            </div>
+          </div>
+          <div class="of-field">
+            <label>Business activity <span class="req">*</span></label>
+            <input type="text" id="of_activity" placeholder="e.g. Software development, Consulting">
+            <div class="of-field-err" id="of_actErr">Please describe the business activity</div>
+          </div>
+        </div>
+        <div class="of-nav">
+          <div></div>
+          <button class="of-btn-next" onclick="ofNext(1)">Directors →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: DIRECTORS -->
+      <div class="of-panel" id="ofStep2">
+        <div class="of-step-header">
+          <div class="of-chip">Step 2 of 4</div>
+          <h2 class="of-title">Directors & secretary</h2>
+          <p class="of-sub">Every Irish company needs at least one director and a company secretary.</p>
+        </div>
+        <div id="ofDirectors"></div>
+        <button class="of-add-btn" onclick="ofAddDirector()">+ Add another director</button>
+        <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
+          <p style="font-size:0.85rem; font-weight:600; margin-bottom:12px;">Company Secretary</p>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:12px;">
+            <input type="checkbox" id="of_secSame" onchange="ofToggleSec()" style="width:17px;height:17px;accent-color:var(--terra);cursor:pointer;">
+            <label for="of_secSame" style="font-size:0.82rem; cursor:pointer;">Same as Director 1</label>
+          </div>
+          <div id="ofSecFields">
+            <div class="of-person" style="margin-bottom:0;">
+              <div class="of-person-label">Secretary</div>
+              <div class="of-fields">
+                <div class="of-row">
+                  <div class="of-field"><label>First name <span class="req">*</span></label><input type="text" id="of_secFirst" placeholder="First name"></div>
+                  <div class="of-field"><label>Last name <span class="req">*</span></label><input type="text" id="of_secLast" placeholder="Last name"></div>
+                </div>
+                <div class="of-field"><label>Address <span class="req">*</span></label><input type="text" id="of_secAddr" placeholder="Full address"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="of-nav">
+          <button class="of-btn-back" onclick="ofGoto(1)">← Back</button>
+          <button class="of-btn-next" onclick="ofNext(2)">Shares →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: SHARES -->
+      <div class="of-panel" id="ofStep3">
+        <div class="of-step-header">
+          <div class="of-chip">Step 3 of 4</div>
+          <h2 class="of-title">Share structure</h2>
+          <p class="of-sub">Define who owns what percentage of the company.</p>
+        </div>
+        <div class="of-share-info">
+          <strong>💡 Standard Irish LTD structure</strong>
+          100,000 authorised shares of €1 each. Most founders issue 100 shares split between them.
+        </div>
+        <div class="of-fields">
+          <div class="of-field">
+            <label>Total shares to issue <span class="req">*</span></label>
+            <input type="text" id="of_totalShares" value="100" placeholder="e.g. 100">
+            <div class="hint">Out of 100,000 authorised shares</div>
+          </div>
+        </div>
+        <div id="ofShareholders" style="margin-top:16px;"></div>
+        <button class="of-add-btn" onclick="ofAddShareholder()" style="margin-top:8px;">+ Add another shareholder</button>
+        <div class="of-nav">
+          <button class="of-btn-back" onclick="ofGoto(2)">← Back</button>
+          <button class="of-btn-next" onclick="ofNext(3)">Review & Pay →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: REVIEW -->
+      <div class="of-panel" id="ofStep4">
+        <div class="of-step-header">
+          <div class="of-chip">Step 4 of 4</div>
+          <h2 class="of-title">Review & pay</h2>
+          <p class="of-sub">Check your details before proceeding to payment.</p>
+        </div>
+        <div id="ofReviewContent"></div>
+        <div class="of-check">
+          <input type="checkbox" id="of_terms">
+          <label for="of_terms">I confirm the above details are accurate and I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+        <button class="of-pay-btn" onclick="ofPay()">🔒 Pay €149 & Form My Company</button>
+        <p style="text-align:center;font-size:0.73rem;color:var(--muted);margin-top:12px;">Secure payment via Stripe · €50 CRO fee included</p>
+        <div class="of-nav" style="margin-top:0;padding-top:16px;">
+          <button class="of-btn-back" onclick="ofGoto(3)">← Back</button>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="of-success" id="ofSuccess">
+        <div class="of-success-icon">🎉</div>
+        <h2>You're on your way!</h2>
+        <p>We've received your details. We'll prepare your documents today and file with the CRO. Check your email for confirmation.</p>
+        <div class="of-success-steps">
+          <div class="of-ss-row"><div class="of-ss-num">1</div><div>Documents prepared today — you'll receive them by email</div></div>
+          <div class="of-ss-row"><div class="of-ss-num">2</div><div>We file your A1 form with the CRO within 1 working day</div></div>
+          <div class="of-ss-row"><div class="of-ss-num">3</div><div>CRO registers your company in 3–5 working days</div></div>
+          <div class="of-ss-row"><div class="of-ss-num">4</div><div>Certificate of Incorporation delivered to your inbox</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY SIDEBAR -->
+    <div class="of-sidebar">
+      <div class="of-sidebar-title">Your application</div>
+      <div class="of-sum-section">
+        <h4>Company</h4>
+        <div class="of-sum-row"><span class="os-label">Name</span><span class="os-val" id="os_name"><em class="empty">Not entered</em></span></div>
+        <div class="of-sum-row"><span class="os-label">Type</span><span class="os-val" id="os_type">LTD</span></div>
+        <div class="of-sum-row"><span class="os-label">County</span><span class="os-val" id="os_county"><em class="empty">—</em></span></div>
+        <div class="of-sum-row"><span class="os-label">Activity</span><span class="os-val" id="os_activity"><em class="empty">—</em></span></div>
+      </div>
+      <div class="of-sum-section">
+        <h4>Directors</h4>
+        <div id="os_directors"><div class="of-sum-row"><span class="os-label">Director 1</span><span class="os-val empty"><em>Not entered</em></span></div></div>
+      </div>
+      <div class="of-sum-section">
+        <h4>Shareholders</h4>
+        <div id="os_shareholders"><div class="of-sum-row"><span class="os-label">SH 1</span><span class="os-val empty"><em>Not entered</em></span></div></div>
+      </div>
+      <div class="of-price-box">
+        <div class="of-price-row"><span class="pl">CRO filing fee</span><span class="pv">€50.00</span></div>
+        <div class="of-price-row"><span class="pl">FORMD service fee</span><span class="pv" style="color:#4ade80;">€99.00</span></div>
+        <div class="of-price-total">
+          <span class="opt-label">Total due today</span>
+          <span class="opt-val">€149</span>
+        </div>
+      </div>
+      <div class="of-trust">
+        <div class="of-trust-item">All CRO fees included</div>
+        <div class="of-trust-item">Same-day document preparation</div>
+        <div class="of-trust-item">Human review before filing</div>
+        <div class="of-trust-item">Certificate in 3–5 working days</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// FORM OVERLAY
+// ══════════════════════════════════════
+
+let ofCurrentStep = 1;
+let ofDirCount = 0;
+let ofShCount = 0;
+
+function openForm(e) {
+  if (e) e.preventDefault();
+  document.getElementById('formOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (ofDirCount === 0) ofAddDirector();
+  if (ofShCount === 0) ofAddShareholder();
+  ofSetupLive();
+}
+
+function closeForm() {
+  document.getElementById('formOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeForm(); });
+
+function ofGoto(n) {
+  document.getElementById(`ofStep${ofCurrentStep}`).classList.remove('active');
+  ofCurrentStep = n;
+  document.getElementById(`ofStep${ofCurrentStep}`).classList.add('active');
+  ofUpdateProgress();
+  document.querySelector('.of-form').scrollTop = 0;
+}
+
+function ofNext(from) {
+  if (!ofValidate(from)) return;
+  if (from + 1 === 4) ofBuildReview();
+  ofGoto(from + 1);
+}
+
+function ofUpdateProgress() {
+  document.querySelectorAll('.of-step-dot').forEach(dot => {
+    const n = parseInt(dot.dataset.s);
+    dot.classList.remove('active', 'done');
+    if (n === ofCurrentStep) dot.classList.add('active');
+    if (n < ofCurrentStep) dot.classList.add('done');
+    dot.querySelector('.of-dot-circle').textContent = n < ofCurrentStep ? '✓' : n;
+  });
+}
+
+// VALIDATION
+function ofValidate(step) {
+  let ok = true;
+  if (step === 1) {
+    if (!gv('of_companyName')) { showE('of_nameErr'); ok = false; } else hideE('of_nameErr');
+    if (!gv('of_addr1') || !gv('of_city') || !gv('of_county')) { showE('of_addrErr'); ok = false; } else hideE('of_addrErr');
+    if (!gv('of_activity')) { showE('of_actErr'); ok = false; } else hideE('of_actErr');
+    const em = gv('of_email'); if (!em || !em.includes('@')) { showE('of_emailErr'); ok = false; } else hideE('of_emailErr');
+  }
+  if (step === 2) {
+    const d1 = document.getElementById('ofDir1_first');
+    if (!d1 || !d1.value.trim()) { alert('Please enter Director 1\'s details.'); ok = false; }
+  }
+  if (step === 3) {
+    const s1 = document.getElementById('ofSh1_name');
+    if (!s1 || !s1.value.trim()) { alert('Please enter at least one shareholder\'s details.'); ok = false; }
+  }
+  return ok;
+}
+
+function gv(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function showE(id) { const el = document.getElementById(id); if (el) el.classList.add('show'); }
+function hideE(id) { const el = document.getElementById(id); if (el) el.classList.remove('show'); }
+
+// DIRECTORS
+function ofAddDirector() {
+  ofDirCount++;
+  const n = ofDirCount;
+  const c = document.getElementById('ofDirectors');
+  const div = document.createElement('div');
+  div.className = 'of-person'; div.id = `ofDirBlock${n}`;
+  div.innerHTML = `
+    <div class="of-person-label">Director ${n} ${n > 1 ? `<button class="of-remove" onclick="ofRemoveDir(${n})">Remove</button>` : ''}</div>
+    <div class="of-fields">
+      <div class="of-row">
+        <div class="of-field"><label>First name <span class="req">*</span></label><input type="text" id="ofDir${n}_first" placeholder="First name"></div>
+        <div class="of-field"><label>Last name <span class="req">*</span></label><input type="text" id="ofDir${n}_last" placeholder="Last name"></div>
+      </div>
+      <div class="of-row">
+        <div class="of-field"><label>Date of birth <span class="req">*</span></label><input type="date" id="ofDir${n}_dob"></div>
+        <div class="of-field"><label>Nationality <span class="req">*</span></label><input type="text" id="ofDir${n}_nat" placeholder="e.g. Irish"></div>
+      </div>
+      <div class="of-field"><label>Residential address <span class="req">*</span></label><input type="text" id="ofDir${n}_addr" placeholder="Full residential address"></div>
+      <div class="of-row">
+        <div class="of-field"><label>PPS Number <span class="req">*</span></label><input type="text" id="ofDir${n}_pps" placeholder="e.g. 1234567A"><div class="hint">Required by CRO since 2023</div></div>
+        <div class="of-field"><label>Occupation <span class="req">*</span></label><input type="text" id="ofDir${n}_occ" placeholder="e.g. Software Engineer"></div>
+      </div>
+    </div>`;
+  c.appendChild(div);
+  ['first','last'].forEach(f => {
+    document.getElementById(`ofDir${n}_${f}`)?.addEventListener('input', ofUpdateDirSummary);
+  });
+}
+
+function ofRemoveDir(n) {
+  document.getElementById(`ofDirBlock${n}`)?.remove();
+  ofUpdateDirSummary();
+}
+
+function ofToggleSec() {
+  document.getElementById('ofSecFields').style.display =
+    document.getElementById('of_secSame').checked ? 'none' : 'block';
+}
+
+// SHAREHOLDERS
+function ofAddShareholder() {
+  ofShCount++;
+  const n = ofShCount;
+  const c = document.getElementById('ofShareholders');
+  const div = document.createElement('div');
+  div.className = 'of-person'; div.id = `ofShBlock${n}`;
+  div.innerHTML = `
+    <div class="of-person-label">Shareholder ${n} ${n > 1 ? `<button class="of-remove" onclick="ofRemoveSh(${n})">Remove</button>` : ''}</div>
+    <div class="of-fields">
+      <div class="of-field"><label>Full name <span class="req">*</span></label><input type="text" id="ofSh${n}_name" placeholder="Full legal name"></div>
+      <div class="of-field"><label>Address <span class="req">*</span></label><input type="text" id="ofSh${n}_addr" placeholder="Full address"></div>
+      <div class="of-row">
+        <div class="of-field"><label>Number of shares <span class="req">*</span></label><input type="text" id="ofSh${n}_shares" placeholder="e.g. 50"></div>
+        <div class="of-field"><label>% ownership</label><input type="text" id="ofSh${n}_pct" readonly placeholder="Auto-calculated" style="background:var(--cream);color:var(--muted);"></div>
+      </div>
+    </div>`;
+  c.appendChild(div);
+  const sharesEl = document.getElementById(`ofSh${n}_shares`);
+  const pctEl = document.getElementById(`ofSh${n}_pct`);
+  sharesEl?.addEventListener('input', () => {
+    const total = parseFloat(gv('of_totalShares')) || 0;
+    const s = parseFloat(sharesEl.value) || 0;
+    pctEl.value = total > 0 ? ((s / total) * 100).toFixed(1) + '%' : '';
+    ofUpdateShSummary();
+  });
+  document.getElementById(`ofSh${n}_name`)?.addEventListener('input', ofUpdateShSummary);
+}
+
+function ofRemoveSh(n) {
+  document.getElementById(`ofShBlock${n}`)?.remove();
+  ofUpdateShSummary();
+}
+
+// LIVE SIDEBAR UPDATES
+function ofSetupLive() {
+  ['of_companyName','of_companyType','of_county','of_activity'].forEach(id => {
+    const el = document.getElementById(id);
+    el?.addEventListener('input', ofUpdateSidebar);
+    el?.addEventListener('change', ofUpdateSidebar);
+  });
+}
+
+function ofUpdateSidebar() {
+  const n = gv('of_companyName');
+  const nameEl = document.getElementById('os_name');
+  if (nameEl) nameEl.innerHTML = n ? `${n} Limited` : '<em class="empty">Not entered</em>';
+  const t = document.getElementById('of_companyType')?.value || 'LTD';
+  const typeEl = document.getElementById('os_type'); if (typeEl) typeEl.textContent = t;
+  const co = gv('of_county');
+  const coEl = document.getElementById('os_county'); if (coEl) coEl.innerHTML = co || '<em class="empty">—</em>';
+  const ac = gv('of_activity');
+  const acEl = document.getElementById('os_activity'); if (acEl) acEl.innerHTML = ac || '<em class="empty">—</em>';
+}
+
+function ofUpdateDirSummary() {
+  const c = document.getElementById('os_directors'); if (!c) return;
+  let html = '';
+  for (let i = 1; i <= ofDirCount; i++) {
+    if (!document.getElementById(`ofDirBlock${i}`)) continue;
+    const first = document.getElementById(`ofDir${i}_first`)?.value || '';
+    const last = document.getElementById(`ofDir${i}_last`)?.value || '';
+    const name = (first + ' ' + last).trim();
+    html += `<div class="of-sum-row"><span class="os-label">Dir ${i}</span><span class="os-val ${name ? '' : 'empty'}">${name || '<em>Not entered</em>'}</span></div>`;
+  }
+  c.innerHTML = html || '<div class="of-sum-row"><span class="os-label">—</span><span class="os-val empty"><em>Not entered</em></span></div>';
+}
+
+function ofUpdateShSummary() {
+  const c = document.getElementById('os_shareholders'); if (!c) return;
+  let html = '';
+  for (let i = 1; i <= ofShCount; i++) {
+    if (!document.getElementById(`ofShBlock${i}`)) continue;
+    const name = document.getElementById(`ofSh${i}_name`)?.value || '';
+    const shares = document.getElementById(`ofSh${i}_shares`)?.value || '';
+    const display = name ? `${name}${shares ? ' · ' + shares : ''}` : '';
+    html += `<div class="of-sum-row"><span class="os-label">SH ${i}</span><span class="os-val ${display ? '' : 'empty'}">${display || '<em>Not entered</em>'}</span></div>`;
+  }
+  c.innerHTML = html || '<div class="of-sum-row"><span class="os-label">—</span><span class="os-val empty"><em>Not entered</em></span></div>';
+}
+
+// REVIEW BUILDER
+function ofBuildReview() {
+  const c = document.getElementById('ofReviewContent');
+  let html = `<div class="of-review-section">
+    <h3>Company <span class="of-edit" onclick="ofGoto(1)">Edit</span></h3>
+    <div class="of-review-grid">
+      <div class="of-rv-row"><div class="of-rv-label">Name</div><div class="of-rv-val">${gv('of_companyName')} Limited</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">Type</div><div class="of-rv-val">${document.getElementById('of_companyType')?.value}</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">Address</div><div class="of-rv-val">${gv('of_addr1')}, ${gv('of_city')}, ${gv('of_county')}</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">Activity</div><div class="of-rv-val">${gv('of_activity')}</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">Email</div><div class="of-rv-val">${gv('of_email')}</div></div>
+    </div>
+  </div>
+  <div class="of-review-section">
+    <h3>Directors <span class="of-edit" onclick="ofGoto(2)">Edit</span></h3>
+    <div class="of-review-grid">`;
+  for (let i = 1; i <= ofDirCount; i++) {
+    if (!document.getElementById(`ofDirBlock${i}`)) continue;
+    const first = document.getElementById(`ofDir${i}_first`)?.value || '';
+    const last = document.getElementById(`ofDir${i}_last`)?.value || '';
+    const dob = document.getElementById(`ofDir${i}_dob`)?.value || '';
+    const pps = document.getElementById(`ofDir${i}_pps`)?.value || '';
+    html += `<div class="of-rv-row"><div class="of-rv-label">Director ${i}</div><div class="of-rv-val">${first} ${last}</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">DOB</div><div class="of-rv-val">${dob}</div></div>
+      <div class="of-rv-row"><div class="of-rv-label">PPS</div><div class="of-rv-val">${pps ? '•••' + pps.slice(-2) : '—'}</div></div>`;
+  }
+  html += `</div></div>
+  <div class="of-review-section">
+    <h3>Shareholders <span class="of-edit" onclick="ofGoto(3)">Edit</span></h3>
+    <div class="of-review-grid">`;
+  for (let i = 1; i <= ofShCount; i++) {
+    if (!document.getElementById(`ofShBlock${i}`)) continue;
+    const name = document.getElementById(`ofSh${i}_name`)?.value || '';
+    const shares = document.getElementById(`ofSh${i}_shares`)?.value || '';
+    const pct = document.getElementById(`ofSh${i}_pct`)?.value || '';
+    html += `<div class="of-rv-row"><div class="of-rv-label">${name}</div><div class="of-rv-val">${shares} shares (${pct})</div></div>`;
+  }
+  html += `</div></div>`;
+  c.innerHTML = html;
+}
+
+// PAYMENT
+function ofPay() {
+  if (!document.getElementById('of_terms').checked) {
+    alert('Please agree to the terms before proceeding.');
+    return;
+  }
+  // Replace YOUR_STRIPE_LINK with your actual Stripe payment link
+  const STRIPE = 'https://buy.stripe.com/YOUR_STRIPE_LINK';
+  const email = gv('of_email');
+  const company = gv('of_companyName') + ' Limited';
+  window.location.href = `${STRIPE}?prefilled_email=${encodeURIComponent(email)}&client_reference_id=${encodeURIComponent(company)}`;
+}
+</script>
+
