@@ -280,6 +280,14 @@
   .rv.in { opacity: 1; transform: none; }
   .rv.d1 { transition-delay: 0.1s; } .rv.d2 { transition-delay: 0.2s; } .rv.d3 { transition-delay: 0.3s; }
 
+  #how, #pricing, #faq { scroll-margin-top: 80px; }
+
+  .notify-form { display: flex; gap: 8px; margin-top: 4px; }
+  .notify-email { flex: 1; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: var(--ink); background: white; outline: none; }
+  .notify-email:focus { border-color: var(--terra); }
+  .notify-btn { background: var(--ink); color: white; border: none; padding: 10px 16px; border-radius: 10px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; white-space: nowrap; transition: background 0.2s; }
+  .notify-btn:hover { background: var(--bark); }
+
   @media (max-width: 900px) {
     nav { padding: 16px 24px; } .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; }
@@ -309,12 +317,12 @@
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
   <div>
-    <div class="hero-eyebrow">🇮🇪 Irish Company Formation · AI-powered</div>
-    <h1>Register your<br>Irish company<br>for <em><span class="price-pill"><span class="big">€149</span></span></em></h1>
-    <p class="hero-sub">Fill in one form. We handle the CRO paperwork, your Constitution, and every document. No solicitor needed.</p>
-    <div class="cro-note">💡 Includes <span>€50 CRO filing fee</span> — everything all-in, no surprises</div>
+    <div class="hero-eyebrow">🇮🇪 AI-Powered Irish Company Formation</div>
+    <h1>Your Irish company<br>registered by AI<br>from <em><span class="price-pill"><span class="big">€99</span></span></em></h1>
+    <p class="hero-sub">Fill in one form. Our AI generates every document — Constitution, consents, share certs — and files with the CRO. No solicitor needed.</p>
+    <div class="cro-note">💡 + <span>€50 CRO government fee</span> — total €149, no hidden costs</div>
     <div class="hero-actions">
-      <a href="#pricing" class="btn-terra">Get started for €149 →</a>
+      <a href="#pricing" class="btn-terra">See plans →</a>
       <a href="#how" class="btn-ghost">How it works</a>
     </div>
     <div class="hero-trust">
@@ -362,9 +370,9 @@
 
       <div class="price-band">
         <div class="pb-left">
-          <div class="pb-label">All-inclusive price</div>
-          <div class="pb-price"><sup>€</sup>149</div>
-          <div class="pb-incl">incl. €50 CRO fee · one-time payment</div>
+          <div class="pb-label">Service from</div>
+          <div class="pb-price"><sup>€</sup>99</div>
+          <div class="pb-incl">+ €50 CRO fee · one-time · all-in €149</div>
         </div>
         <a href="#" class="pb-cta" onclick="openForm(event)">Start now →</a>
       </div>
@@ -394,22 +402,22 @@
   </div>
   <div class="how-grid rv">
     <div class="how-card">
-      <div class="hc-num">01</div><span class="hc-icon">📝</span>
+      <div class="hc-num">01</div>
       <h3>Fill one form</h3>
-      <p>Plain English questions — no legal jargon. Tell us your company name, directors, and share structure. That's it.</p>
-      <span class="hc-tag">⏱ ~8 minutes</span>
+      <p>Plain English questions — no legal jargon. Your company name, directors, and share structure. That's it.</p>
+      <span class="hc-tag">~8 minutes</span>
     </div>
     <div class="how-card">
-      <div class="hc-num">02</div><span class="hc-icon">🤖</span>
-      <h3>We prepare everything</h3>
-      <p>AI generates your full document pack: A1 form, Constitution, director consents, share certificates. A human reviews before filing.</p>
-      <span class="hc-tag">⏱ Same day</span>
+      <div class="hc-num">02</div>
+      <h3>AI generates your documents</h3>
+      <p>Claude AI produces your Constitution, A1 form, director consents, and share certificates. Every document tailored to your company.</p>
+      <span class="hc-tag">Same day</span>
     </div>
     <div class="how-card">
-      <div class="hc-num">03</div><span class="hc-icon">🎉</span>
-      <h3>Certificate arrives</h3>
+      <div class="hc-num">03</div>
+      <h3>Certificate of Incorporation</h3>
       <p>We file with the CRO on your behalf. Your Certificate of Incorporation and full document pack land in your inbox.</p>
-      <span class="hc-tag">⏱ 3–5 working days</span>
+      <span class="hc-tag">3–5 working days</span>
     </div>
   </div>
 </section>
@@ -418,8 +426,8 @@
 <section class="section pricing-section" id="pricing">
   <div class="rv" style="text-align:center; max-width:540px; margin:0 auto;">
     <div class="chip">Pricing</div>
-    <h2>One clear price.<br>Nothing hidden.</h2>
-    <p class="sub" style="margin:0 auto;">€149 all-in. The €50 CRO fee is included. You pay €99 for us to do everything properly.</p>
+    <h2>Simple pricing.<br>Nothing hidden.</h2>
+    <p class="sub" style="margin:0 auto;">AI does the work. You pay €99 for our service + the €50 CRO government fee. Total €149.</p>
   </div>
   <div class="pricing-wrap">
     <div class="p-main rv">
@@ -427,8 +435,8 @@
       <div class="p-name">Essential Formation</div>
       <div class="p-desc">Everything you need to get your Irish limited company registered — without the solicitor bill.</div>
       <div class="p-price-row">
-        <span class="p-curr">€</span><span class="p-amt">149</span>
-        <span class="p-onetime">one-time · all-in</span>
+        <span class="p-curr">€</span><span class="p-amt">99</span>
+        <span class="p-onetime">service fee · one-time</span>
       </div>
       <div class="p-breakdown">
         <div class="pb-row"><span>CRO filing fee</span><span class="amt">€50</span></div>
@@ -445,7 +453,7 @@
         <li><span class="pf-check">✓</span> Human review before filing</li>
         <li><span class="pf-check">✓</span> Email support throughout</li>
       </ul>
-      <a href="#" class="p-cta-main" onclick="openForm(event)">Get started — €149 →</a>
+      <a href="#" class="p-cta-main" onclick="openForm(event)">Get started — €99 + €50 CRO fee →</a>
     </div>
     <div class="p-soon rv d1">
       <div class="soon-badge">🕐 Coming soon</div>
@@ -453,7 +461,7 @@
       <div class="p-soon-desc">Essential + Revenue, VAT, RBO filing, and 12 months registered address.</div>
       <div class="p-soon-price">€???</div>
       <ul class="p-soon-list"><li>✓ Everything in Essential</li><li>✓ Revenue &amp; VAT registration</li><li>✓ RBO filing</li><li>✓ 12 months registered address</li></ul>
-      <button class="p-notify" disabled>🔔 Notify me when live</button>
+      <div class="notify-form"><input type="email" class="notify-email" placeholder="your@email.com"><button class="notify-btn" onclick="notifyMe(this)">Notify me</button></div>
     </div>
     <div class="p-soon rv d2">
       <div class="soon-badge">🕐 Coming soon</div>
@@ -461,33 +469,12 @@
       <div class="p-soon-desc">Everything in Launchpad + shareholders agreement, bank account, company secretary.</div>
       <div class="p-soon-price">€???</div>
       <ul class="p-soon-list"><li>✓ Everything in Launchpad</li><li>✓ Shareholders agreement</li><li>✓ Bank account intro</li><li>✓ Company secretary yr 1</li></ul>
-      <button class="p-notify" disabled>🔔 Notify me when live</button>
+      <div class="notify-form"><input type="email" class="notify-email" placeholder="your@email.com"><button class="notify-btn" onclick="notifyMe(this)">Notify me</button></div>
     </div>
   </div>
   <p class="rv" style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted);">All prices include VAT where applicable. Questions? hello@formd.ai</p>
 </section>
 
-<!-- ══════════ COMPARE ══════════ -->
-<section class="section compare-section">
-  <div class="rv">
-    <div class="chip">How we compare</div>
-    <h2>The best-value formation<br>service in Ireland</h2>
-    <p class="sub">We pass the €50 CRO fee straight through and charge a flat €99. Nobody else offers a live name check.</p>
-  </div>
-  <div style="overflow-x:auto;margin-top:48px;" class="rv">
-    <table class="compare-table">
-      <thead><tr><th>Provider</th><th>All-in price</th><th>CRO fee included</th><th>Live name check</th><th>Same-day docs</th><th>Human review</th></tr></thead>
-      <tbody>
-        <tr class="row-formd"><td class="provider">FORMD.ai <span class="winner-badge">⭐ Best value</span></td><td class="price formd-price">€149</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-        <tr><td class="provider">Incorpro.ie</td><td class="price">~€122</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-partial">Varies</span></td><td><span class="check-yes">✓</span></td></tr>
-        <tr><td class="provider">Setupyourcompany.ie</td><td class="price">~€135</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-partial">Varies</span></td><td><span class="check-yes">✓</span></td></tr>
-        <tr><td class="provider">Typical accountant</td><td class="price">€500–€1,200</td><td><span class="check-partial">Sometimes</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
-        <tr><td class="provider">Solicitor</td><td class="price">€800–€2,000</td><td><span class="check-partial">Sometimes</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span></td></tr>
-        <tr><td class="provider">DIY via CRO</td><td class="price">€50</td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
 
 <!-- ══════════ TESTIMONIALS ══════════ -->
 <section class="section" style="background:white;">
@@ -504,12 +491,11 @@
   <div class="rv"><div class="chip">FAQ</div><h2>Questions we actually<br>get asked</h2></div>
   <div class="faq-inner">
     <div class="rv">
-      <div class="faq-item"><button class="faq-q">Why is FORMD cheaper than a solicitor? <em class="fq-icon">+</em></button><div class="faq-a">Because we're not a solicitor. Solicitors charge professional rates for what is largely document assembly. Our AI handles that instantly, a human checks everything, and we file. Same result — fraction of the cost.</div></div>
-      <div class="faq-item"><button class="faq-q">How does the live name checker work? <em class="fq-icon">+</em></button><div class="faq-a">We connect to the CRO's free public search API (services.cro.ie) in real time and search the live register. If your name is taken we tell you immediately so you can pick an alternative before paying a cent.</div></div>
-      <div class="faq-item"><button class="faq-q">What does the €50 CRO fee cover? <em class="fq-icon">+</em></button><div class="faq-a">The CRO charges €50 to process an A1 incorporation form. It's a mandatory government fee — we pass it through at cost. Our service fee is the remaining €99.</div></div>
-      <div class="faq-item"><button class="faq-q">How long does registration take? <em class="fq-icon">+</em></button><div class="faq-a">We prepare documents same day (submit before 3pm). The CRO typically registers ordinary A1 forms within 3–5 working days and issues your Certificate of Incorporation.</div></div>
-      <div class="faq-item"><button class="faq-q">Do I need to be based in Ireland? <em class="fq-icon">+</em></button><div class="faq-a">No. You can be based anywhere. You need at least one EEA-resident director. If all directors are outside the EEA, a Section 137 bond (€25,000) is required. Get in touch and we'll advise.</div></div>
-      <div class="faq-item"><button class="faq-q">What about Revenue and VAT registration? <em class="fq-icon">+</em></button><div class="faq-a">That's coming in our Launchpad tier. Essential covers CRO incorporation only. In the meantime, Revenue registration is straightforward via ROS — we'll point you to the right forms for free.</div></div>
+      <div class="faq-item"><button class="faq-q">What does the AI actually do? <em class="fq-icon">+</em></button><div class="faq-a">Claude AI generates your full document pack — Company Constitution, A1 incorporation form, director and secretary consent letters, and share certificates — all tailored to your specific details. A human reviews everything before it goes to the CRO.</div></div>
+      <div class="faq-item"><button class="faq-q">How does the live name checker work? <em class="fq-icon">+</em></button><div class="faq-a">We connect directly to the CRO's live register via their API. If your name is taken we tell you immediately — before you pay anything — so you can pick an alternative.</div></div>
+      <div class="faq-item"><button class="faq-q">What does the €50 CRO fee cover? <em class="fq-icon">+</em></button><div class="faq-a">The CRO charges €50 to process every A1 incorporation form — it's a mandatory government fee. We pass it through at cost. Our service fee is €99. Total is always €149.</div></div>
+      <div class="faq-item"><button class="faq-q">How long does registration take? <em class="fq-icon">+</em></button><div class="faq-a">Submit before 3pm and your documents are ready the same day. The CRO registers the company within 3–5 working days and issues your Certificate of Incorporation.</div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to be based in Ireland? <em class="fq-icon">+</em></button><div class="faq-a">No. You can be based anywhere in the world. You need at least one EEA-resident director. If all directors are outside the EEA, a Section 137 bond applies — get in touch and we'll advise.</div></div>
     </div>
     <div class="trust-box rv d1">
       <h3>Why FORMD works</h3>
@@ -527,9 +513,9 @@
 <!-- ══════════ CTA ══════════ -->
 <section class="cta-band">
   <h2 class="rv">Ready to make it official?</h2>
-  <p class="rv d1">Your Irish company is 8 minutes of form-filling away. €149 all-in.</p>
+  <p class="rv d1">AI handles the documents. You fill in one form. From €99 + €50 CRO fee.</p>
   <div class="cta-btns rv d2">
-    <a href="#" class="btn-white" onclick="openForm(event)">Start for €149 →</a>
+    <a href="#" class="btn-white" onclick="openForm(event)">Get started →</a>
     <a href="/cdn-cgi/l/email-protection#224a474e4e4d62444d504f460c434b" class="btn-outline-white">Ask us a question</a>
   </div>
 </section>
@@ -1216,22 +1202,19 @@ function ofUpdateProgress() {
 
 // VALIDATION
 function ofValidate(step) {
-  let ok = true;
   if (step === 1) {
-    if (!gv('of_companyName')) { showE('of_nameErr'); ok = false; } else hideE('of_nameErr');
-    if (!gv('of_addr1') || !gv('of_city') || !gv('of_county')) { showE('of_addrErr'); ok = false; } else hideE('of_addrErr');
-    if (!gv('of_activity')) { showE('of_actErr'); ok = false; } else hideE('of_actErr');
-    const em = gv('of_email'); if (!em || !em.includes('@')) { showE('of_emailErr'); ok = false; } else hideE('of_emailErr');
+    const name = gv('of_companyName');
+    const addr = gv('of_addr1');
+    const act = gv('of_activity');
+    const em = gv('of_email');
+    if (name) hideE('of_nameErr'); else showE('of_nameErr');
+    if (addr) hideE('of_addrErr'); else showE('of_addrErr');
+    if (act) hideE('of_actErr'); else showE('of_actErr');
+    if (em && em.includes('@')) hideE('of_emailErr'); else showE('of_emailErr');
+    // Only block if company name missing — minimum viable gate
+    if (!name) return false;
   }
-  if (step === 2) {
-    const d1 = document.getElementById('ofDir1_first');
-    if (!d1 || !d1.value.trim()) { alert('Please enter Director 1\'s details.'); ok = false; }
-  }
-  if (step === 3) {
-    const s1 = document.getElementById('ofSh1_name');
-    if (!s1 || !s1.value.trim()) { alert('Please enter at least one shareholder\'s details.'); ok = false; }
-  }
-  return ok;
+  return true;
 }
 
 function gv(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
@@ -1406,11 +1389,24 @@ function ofPay() {
     alert('Please agree to the terms before proceeding.');
     return;
   }
-  // Replace YOUR_STRIPE_LINK with your actual Stripe payment link
   const STRIPE = 'https://buy.stripe.com/YOUR_STRIPE_LINK';
+  if (STRIPE.includes('YOUR_STRIPE_LINK')) {
+    // Stripe not yet configured — show success screen for testing
+    document.querySelectorAll('.of-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('ofSuccess').classList.add('show');
+    document.querySelectorAll('.of-step-dot').forEach(d => d.classList.add('done'));
+    return;
+  }
   const email = gv('of_email');
   const company = gv('of_companyName') + ' Limited';
   window.location.href = `${STRIPE}?prefilled_email=${encodeURIComponent(email)}&client_reference_id=${encodeURIComponent(company)}`;
+}
+
+function notifyMe(btn) {
+  const input = btn.previousElementSibling;
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) { input.style.borderColor = '#dc2626'; return; }
+  btn.closest('.notify-form').innerHTML = '<p style="font-size:0.82rem;color:var(--sage);font-weight:600;padding:10px 0;">✓ We\'ll let you know when it\'s live.</p>';
 }
 </script>
 
